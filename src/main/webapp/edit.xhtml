@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+   <h:outputStylesheet rel="stylesheet" href="https://unpkg.com/primeflex@latest/primeflex.css"/>
+</h:head>
+
+<h:body>
+   <h:form id="update">
+      <p:panel header="Update User">
+         <p:panelGrid columns="1" layout="grid">
+            <p:outputLabel for="userName" value="User Name"/>
+            <p:inputText id="userName" value='#{registerView.registerUser.userName}'/>
+            <p:outputLabel for="email" value="Email"/>
+
+            <p:inputText id="email" value='#{registerView.registerUser.email}'/>
+            <p:commandButton value="Update" update="update" action="#{registerView.update}" ajax="false"/>
+         </p:panelGrid>
+         <input type="hidden" name="userId" value='#{param.id}'/>
+      </p:panel>
+   </h:form>
+</h:body>
+</html>
